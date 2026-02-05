@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Media Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>YouTube Media Tool</h2>
+
+        <input
+            type="text"
+            id="videoUrl"
+            placeholder="Paste YouTube URL here"
+        >
+
+        <button onclick="sendUrl()">Submit</button>
+
+        <p id="result"></p>
+
+        <div id="info"></div>
+
+        <div id="loader">Loading...</div>
+
+        <img id="thumbnail">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
