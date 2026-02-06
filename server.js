@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
@@ -35,7 +35,6 @@ app.post("/submit", async (req, res) => {
     }
 
     try {
-        // oEmbed (no API key)
         const oembedUrl = `https://www.youtube.com/oembed?url=${encodeURIComponent(url)}&format=json`;
         const response = await fetch(oembedUrl);
         const data = await response.json();
@@ -59,5 +58,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log("Server running on http://localhost:3000");
+    console.log("Server running on port", PORT);
 });
